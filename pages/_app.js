@@ -1,10 +1,12 @@
 import Layout from "../components/Layout";
-
+import { DataProvider } from "../store/GlobalState";
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <DataProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </DataProvider>
   );
 }
 

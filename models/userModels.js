@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const useSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -19,6 +19,10 @@ const useSchema = new mongoose.Schema(
       default: "user",
     },
     root: {
+      type: Boolean,
+      default: false,
+    },
+    avatar: {
       type: String,
       default:
         "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png",

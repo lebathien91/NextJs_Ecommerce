@@ -1,22 +1,53 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
+import valid from "../utils/valid";
 
 const Register = () => {
+  const initialState = { name: "", email: "", password: "", cf_password: "" };
+  const [userData, setUserData] = useState(initialState);
+  const { name, email, password, cf_password } = userData;
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errMsg = valid(name, email, password, cf_password);
+    if (errMsg) console.log(errMsg);
+  };
   return (
     <div>
       <Head>
         <title>Register Page</title>
       </Head>
 
-      <form className="mx-auto my-4" style={{ maxWidth: "500px" }}>
+      <form
+        className="mx-auto my-4"
+        style={{ maxWidth: "500px" }}
+        onSubmit={handleSubmit}
+      >
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            value={name}
+            onChange={handleChangeInput}
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
+            name="email"
             type="email"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            placeholder="Enter email"
+            value={email}
+            onChange={handleChangeInput}
           />
           <small id="emailHelp" className="form-text text-muted">
             We'll never share your email with anyone else.
@@ -25,10 +56,23 @@ const Register = () => {
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
+            name="password"
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            placeholder="Password"
+            value={password}
+            onChange={handleChangeInput}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword2">Confirm Password</label>
+          <input
+            name="cf_password"
+            type="password"
+            className="form-control"
+            id="exampleInputPassword2"
+            value={cf_password}
+            onChange={handleChangeInput}
           />
         </div>
 

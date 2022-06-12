@@ -1,17 +1,8 @@
-import React from "react";
+import styles from "./Loading.module.css";
 
 const Loading = () => {
   return (
-    <div
-      className="position-fixed w-100 h-100 text-center loading"
-      style={{
-        background: "#0008",
-        color: "white",
-        top: 0,
-        left: 0,
-        zIndex: 9,
-      }}
-    >
+    <div className={styles.loading}>
       <svg width="205" height="250" viewBox="0 0 40 50">
         <polygon
           strokeWidth="1"

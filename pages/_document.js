@@ -9,7 +9,6 @@ class MyDocument extends Document {
             name="description"
             content="Dev AT E-commerce website with Next.js"
           />
-          <link rel="stylesheet" href="/css/bootstrap.css" />
           <script src="/js/jquery.slim.min.js"></script>
           <script src="/js/bootstrap.bundle.js"></script>
           <script src="/js/font.js"></script>

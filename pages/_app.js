@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+import "../public/css/bootstrap.css";
+
 import Layout from "../components/Layout";
 import { DataProvider } from "../store/GlobalState";
 function MyApp({ Component, pageProps }) {

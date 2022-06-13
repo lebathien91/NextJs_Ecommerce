@@ -76,7 +76,7 @@ const Signin = () => {
             onChange={handleChangeInput}
           />
           <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
+            We&apos;ll never share your email with anyone else.
           </small>
         </div>
         <div className="form-group">
@@ -95,7 +95,7 @@ const Signin = () => {
           Login
         </button>
         <p>
-          You don't have an account?{" "}
+          You don&apos;t have an account?{" "}
           <Link href="/register">
             <a style={{ color: "crimson" }}>Register</a>
           </Link>
